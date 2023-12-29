@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { IoMdClose } from "react-icons/io";
 import fortnitewallpaper from "./assets/fortnite-pictures-b5kfcchwazwiz3cs_1.png"
@@ -6,7 +6,14 @@ import image1 from "./assets/Mask group.png"
 import image2 from "./assets/Mask group-1.png"
 import image3 from "./assets/Mask group-2.png"
 function App() {
-  const [count, setCount] = useState(0)
+  const [hide, sethide] = useState("")
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      sethide("hidden")
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, [])
+
 
   const CardData = [
     {
@@ -34,13 +41,16 @@ function App() {
 
   return (
     <>
+
       <div className='w-full h-[2000px] bg-black px-[50px] pt-[20px] overflow-x-hidden flex flex-col items-center'>
 
         <div className='w-full flex flex-row items-end justify-end ' >
           <IoMdClose className='text-white md:text-xl hover:rotate-180 transition-all duration-500' />
         </div>
 
-        <h1 className='text-white  text-2xl font-thin md:w-[560px] text-center mb-6'>Epic Games : An American video game and software Developer and publisher based in Cary, North Carolina.</h1>
+        <p className={`text-xl w-[650px] pt-5 text-red-700 text-center ${hide}`}> I have made it responsive for medium screen and mobile screen only Thankyou </p>
+      
+        <h1 className='text-white  md:text-2xl font-thin md:w-[560px] text-center mb-6'>Epic Games : An American video game and software Developer and publisher based in Cary, North Carolina.</h1>
         <img src={fortnitewallpaper} width={800} alt="image" />
 
         <h1 className='text-white pt-5 text-sm font-thin md:w-[800px] text-center mb-6'>Create, play, and battle with friends for free in Fortnite. Be the last player standing in Battle Royale and Zero Build, experience a concert or live event, or discover over a million creator made games, including racing, parkour, zombie survival, and more. Each Fortnite island has an individual age rating so you can find the one that's right for you and your friends. Find it all in Fortnite ... Drop In.</h1>
