@@ -35,6 +35,7 @@ function App() {
   return (
     <>
       <div className='w-full h-[2000px] bg-black px-[50px] pt-[20px] overflow-x-hidden flex flex-col items-center'>
+
         <div className='w-full flex flex-row items-end justify-end ' >
           <IoMdClose className='text-white hover:rotate-180 transition-all duration-500' />
         </div>
@@ -96,8 +97,8 @@ function App() {
 
 
         <div className='w-full flex flex-1 flex-col justify-end items-center'>
-  <h4 className='text-white text-xs'>&copy; 2019-2023 abcTechnology Solutions Pvt. Ltd. All Rights Reserved</h4>
-</div>
+          <h4 className='text-white text-xs'>&copy; 2019-2023 abcTechnology Solutions Pvt. Ltd. All Rights Reserved</h4>
+        </div>
 
 
 
